@@ -1,0 +1,305 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &686541342809032360
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 6213630050578891074}
+  - component: {fileID: 3128045845432580892}
+  - component: {fileID: 2156433788934802293}
+  - component: {fileID: 8104577160380880180}
+  - component: {fileID: 4588746503377626178}
+  - component: {fileID: 5407962404395539399}
+  m_Layer: 0
+  m_Name: Red Deck Complete
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &6213630050578891074
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.088211216, y: 0.82754505, z: -8.55357}
+  m_LocalScale: {x: 0.01, y: 0.01, z: 0.01}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!33 &3128045845432580892
+MeshFilter:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  m_Mesh: {fileID: 8985811132831954676, guid: 94a16f52c70b67741b43efbbbc10a872, type: 3}
+--- !u!23 &2156433788934802293
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 2100000, guid: b7c70036eb8536d4698b881922fa3ce2, type: 2}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
+--- !u!54 &8104577160380880180
+Rigidbody:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  serializedVersion: 4
+  m_Mass: 1
+  m_Drag: 0
+  m_AngularDrag: 0.05
+  m_CenterOfMass: {x: 0, y: 0, z: 0}
+  m_InertiaTensor: {x: 1, y: 1, z: 1}
+  m_InertiaRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ImplicitCom: 1
+  m_ImplicitTensor: 1
+  m_UseGravity: 1
+  m_IsKinematic: 0
+  m_Interpolate: 0
+  m_Constraints: 0
+  m_CollisionDetection: 0
+--- !u!65 &4588746503377626178
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  m_Material: {fileID: 0}
+  m_IncludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_ExcludeLayers:
+    serializedVersion: 2
+    m_Bits: 0
+  m_LayerOverridePriority: 0
+  m_IsTrigger: 0
+  m_ProvidesContacts: 0
+  m_Enabled: 1
+  serializedVersion: 3
+  m_Size: {x: 5.6960616, y: 1.3420548, z: 8.872102}
+  m_Center: {x: 0, y: 0.6710197, z: 0.000061035156}
+--- !u!114 &5407962404395539399
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 19ae83e236dc2bf488dae8e7c82033d3, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  Deck:
+  - card: {fileID: 8713357493971281527, guid: b431e3858e2209247a90d54c1c539236, type: 3}
+    suit: Clubs
+    rank: 1
+  - card: {fileID: 4728769083773931331, guid: aa3f536aaeb912142a229c72cbb7514f, type: 3}
+    suit: 
+    rank: 2
+  - card: {fileID: 2407788585431381547, guid: de7f4fb19a9baa94ebd8c6c2a283f3f6, type: 3}
+    suit: Clubs
+    rank: 3
+  - card: {fileID: 8607722703119711929, guid: 021b1345f20da974a9aab5db9f4b330b, type: 3}
+    suit: Clubs
+    rank: 4
+  - card: {fileID: 14266837350846585, guid: 2f809bae5d074164f8a3f256bf447328, type: 3}
+    suit: Clubs
+    rank: 5
+  - card: {fileID: 5157621696908248286, guid: cface5db7437a00479b954669cd05ca1, type: 3}
+    suit: Clubs
+    rank: 6
+  - card: {fileID: 4326086016779330002, guid: a3fa6a6e3af9b8e4bbc5fd6dbd61c97d, type: 3}
+    suit: Clubs
+    rank: 7
+  - card: {fileID: 1535433599517909325, guid: f5d7babdcad84164eb7736b01ab1ef68, type: 3}
+    suit: Clubs
+    rank: 8
+  - card: {fileID: 4272227442516388497, guid: 1ffa384972b62264088918309142ec38, type: 3}
+    suit: Clubs
+    rank: 9
+  - card: {fileID: 2194625916379401999, guid: 7b39de9879e68a640a17a09cd4296412, type: 3}
+    suit: Clubs
+    rank: 10
+  - card: {fileID: 797663579735092538, guid: e01dd721e8c464341ac4194731bb7873, type: 3}
+    suit: Clubs
+    rank: 11
+  - card: {fileID: 4974323665272148467, guid: f2580bd22e569cd4d98c91090a22b37b, type: 3}
+    suit: Clubs
+    rank: 12
+  - card: {fileID: 8387379401857513986, guid: 4a5b3932114d4e546be91128438ea6f5, type: 3}
+    suit: Clubs
+    rank: 13
+  - card: {fileID: 7798726810910966806, guid: dd17955b50dcf904a9274b08aeeea87a, type: 3}
+    suit: Diamonds
+    rank: 1
+  - card: {fileID: 740152203769002627, guid: 8d1adc01c8cf8e54d891c3f33433ce3a, type: 3}
+    suit: Diamonds
+    rank: 2
+  - card: {fileID: 877798333468748233, guid: 72e771a4d7e3d024c905385aad4f4a5a, type: 3}
+    suit: Diamonds
+    rank: 3
+  - card: {fileID: 8161463967123878006, guid: d70afd41d238a9c4eb86271647eb9fbe, type: 3}
+    suit: Diamonds
+    rank: 4
+  - card: {fileID: 4705094881709916490, guid: 44a05ad15ff2a1143ae60d7c53480816, type: 3}
+    suit: Diamonds
+    rank: 5
+  - card: {fileID: 5171526685483169077, guid: c9715f4292e43084c97e876b0f2598dc, type: 3}
+    suit: Diamonds
+    rank: 6
+  - card: {fileID: 3948913753458471593, guid: f0a75bfe72e8c5e49a3aea03890029bc, type: 3}
+    suit: Diamonds
+    rank: 7
+  - card: {fileID: 7053000059559068000, guid: 09555fbdafc3ca7469b92f1fdf5e3c2d, type: 3}
+    suit: Diamonds
+    rank: 8
+  - card: {fileID: 4244010846955971451, guid: c1c794ff88bc4eb409806f0fe449bed8, type: 3}
+    suit: Diamonds
+    rank: 9
+  - card: {fileID: 2859525627050369763, guid: 84a5ab1ee3ae8f84aa84de333b70ca56, type: 3}
+    suit: Diamonds
+    rank: 10
+  - card: {fileID: 1296520148085422313, guid: 8a23ed8431571c44a82ee036052a8507, type: 3}
+    suit: Diamonds
+    rank: 11
+  - card: {fileID: 7349598165893746992, guid: 8b7888a9e7ead434c9804dcd910d457f, type: 3}
+    suit: Diamonds
+    rank: 12
+  - card: {fileID: 1854059080673174812, guid: fa4ab3ca1c4374b4b8b2e25a47e05b5a, type: 3}
+    suit: Diamonds
+    rank: 13
+  - card: {fileID: 5108530814853527752, guid: 7b9aa311f7e68df46a1b1edc9e63d1b2, type: 3}
+    suit: Hearts
+    rank: 1
+  - card: {fileID: 4727978638938396040, guid: 43796c3bd339cc04c9abf3e0fd8fa074, type: 3}
+    suit: Hearts
+    rank: 2
+  - card: {fileID: 4896236198963130619, guid: b88620401c87539438bc45df9fcd06de, type: 3}
+    suit: Hearts
+    rank: 3
+  - card: {fileID: 6768490208719384955, guid: 22d868a9a7c0dd645a2387d8b7e7baae, type: 3}
+    suit: Hearts
+    rank: 4
+  - card: {fileID: 8565964268489250769, guid: 43817154431adc745995092829edaf39, type: 3}
+    suit: Hearts
+    rank: 5
+  - card: {fileID: 3395873644960650868, guid: 67b9f52ce7a73b042a16ecf13729e94c, type: 3}
+    suit: Hearts
+    rank: 6
+  - card: {fileID: 4666594437758516045, guid: cc19fa2cdac1e7e4b9d341347dd41f3c, type: 3}
+    suit: Hearts
+    rank: 7
+  - card: {fileID: 7209141216918027488, guid: fc870d3348bb69d47ad045e57de4fc64, type: 3}
+    suit: Hearts
+    rank: 8
+  - card: {fileID: 6384156451879443105, guid: 6403a9ac878fb7a4c9969643bec0c242, type: 3}
+    suit: Hearts
+    rank: 9
+  - card: {fileID: 747243187590446997, guid: 0d25424106348804ab82f762681c1646, type: 3}
+    suit: Hearts
+    rank: 10
+  - card: {fileID: 7227086467103658190, guid: faaf732e116473149bc526cf6da226e8, type: 3}
+    suit: Hearts
+    rank: 11
+  - card: {fileID: 8620257906845747340, guid: ef2f97b9f957fe140abbf796b2bad373, type: 3}
+    suit: Hearts
+    rank: 12
+  - card: {fileID: 2015021348791853094, guid: 5bd4c7c00ae3e0d48acbd1a271d5c422, type: 3}
+    suit: Hearts
+    rank: 13
+  - card: {fileID: 1102907449829192419, guid: 4127cfc781ac87647b0ec77739e4505b, type: 3}
+    suit: Spades
+    rank: 1
+  - card: {fileID: 4815123218820875828, guid: 1e4a72878cb15c24b804dd7cc0d16bc9, type: 3}
+    suit: Spades
+    rank: 2
+  - card: {fileID: 1138510310478055048, guid: 7b901bf02930bb64f962415beb649a34, type: 3}
+    suit: Spades
+    rank: 3
+  - card: {fileID: 6255357424900943651, guid: be1e75c90d564b74488c41ae9b2f856a, type: 3}
+    suit: Spades
+    rank: 4
+  - card: {fileID: 4705075992077169630, guid: 1ca01dca8a0908e45927e722218591d4, type: 3}
+    suit: Spades
+    rank: 5
+  - card: {fileID: 2296161047606720775, guid: d1b1a1695916d0f48a1f7fb784627eb2, type: 3}
+    suit: Spades
+    rank: 6
+  - card: {fileID: 3639130532060189858, guid: 30adbc24963e2c64ba5d5c8b258864dd, type: 3}
+    suit: Spades
+    rank: 7
+  - card: {fileID: 5712490292125568556, guid: e9ef906e9bc65e842b6dfff1cbbdc31a, type: 3}
+    suit: Spades
+    rank: 8
+  - card: {fileID: 966901289727711529, guid: 8a469cd2437c7d64fb45b64b37a2b547, type: 3}
+    suit: Spades
+    rank: 9
+  - card: {fileID: 7174289347754356117, guid: 09e7b903fe0dbde4e9bb32a9d326584c, type: 3}
+    suit: Spades
+    rank: 10
+  - card: {fileID: 8017095965791180941, guid: 629f5cfb1ff23d943813009729aaafac, type: 3}
+    suit: Spades
+    rank: 11
+  - card: {fileID: 973126801939583721, guid: 5d307e2aa74b15c488f7a9848a1790e7, type: 3}
+    suit: Spades
+    rank: 12
+  - card: {fileID: 1969986926114890988, guid: 73f9fbaa0ed147a4598cfb2bbe05f2f2, type: 3}
+    suit: Spades
+    rank: 13
