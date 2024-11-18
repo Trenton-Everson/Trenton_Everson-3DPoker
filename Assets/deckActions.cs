@@ -37,10 +37,11 @@ public class deckActions : MonoBehaviour
         secondCardTransform = new Vector3(-0.0231f, 0.903f, -9.371f);
         firstCardRotation = Quaternion.Euler(-39.985f, 0, 0);
         secondCardRotation = Quaternion.Euler(-39.985f, 0, 0);
+        shuffledDeck = shuffleDeck(Deck);
     }
     public void Start()
     {
-        shuffledDeck = shuffleDeck(Deck);
+        
 
     }
 
@@ -51,8 +52,10 @@ public class deckActions : MonoBehaviour
 
     public cardStructure Draw()
     {
-        cardStructure drawnCard = shuffledDeck[0];
         List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
+        cardStructure drawnCard = shuffledDeck[0];
+
+        
         deckList.RemoveAt(0);
         shuffledDeck = deckList.ToArray();
 
@@ -61,11 +64,7 @@ public class deckActions : MonoBehaviour
 
     public void addCardToHand()
     {
-        if (shuffledDeck.Length == 0)
-        {
-            print("No cards Left");
-        }
-        else if (handSize == 2)
+        if (handSize == 2)
         {
             print("Hand is full");
         }
@@ -77,16 +76,17 @@ public class deckActions : MonoBehaviour
 
             if (handSize == 0)
             {
-            sampleCardObject.transform.position = firstCardTransform;
-            sampleCardObject.transform.rotation = firstCardRotation;
-            playerHand[0] = sampleCard;
+                sampleCardObject.transform.position = firstCardTransform;
+                sampleCardObject.transform.rotation = firstCardRotation;
+                playerHand[0] = sampleCard;
             }
             else if (handSize == 1)
             {
-            sampleCardObject.transform.position = secondCardTransform;
-            sampleCardObject.transform.rotation = secondCardRotation;
-            playerHand[1] = sampleCard;
+                sampleCardObject.transform.position = secondCardTransform;
+                sampleCardObject.transform.rotation = secondCardRotation;
+                playerHand[1] = sampleCard;
             }
+
             handSize++;
         }
     }
