@@ -7,7 +7,7 @@ using JetBrains.Annotations;
 using Unity.VisualScripting;
 using UnityEngine;
 
-public class Deck_Creation : MonoBehaviour
+public class deckActions : MonoBehaviour
 {
     public cardStructure[] Deck = new cardStructure[52];
     public cardStructure[] shuffledDeck;
@@ -49,7 +49,17 @@ public class Deck_Creation : MonoBehaviour
         return null;
     }
 
-    public void drawCard()
+    public cardStructure Draw()
+    {
+        cardStructure drawnCard = shuffledDeck[0];
+        List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
+        deckList.RemoveAt(0);
+        shuffledDeck = deckList.ToArray();
+
+        return drawnCard;
+    }
+
+    public void addCardToHand()
     {
         if (shuffledDeck.Length == 0)
         {
@@ -61,14 +71,10 @@ public class Deck_Creation : MonoBehaviour
         }
         else
         {
-            List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
-            cardStructure sampleCard = shuffledDeck[0];
+            cardStructure sampleCard = Draw();
             
             GameObject sampleCardObject = Instantiate(sampleCard.card);
-            
 
-            deckList.RemoveAt(0);
-            shuffledDeck = deckList.ToArray();
             if (handSize == 0)
             {
             sampleCardObject.transform.position = firstCardTransform;
@@ -88,31 +94,24 @@ public class Deck_Creation : MonoBehaviour
     {
         if (!flopShown)
         {
-        List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
 
-        cardStructure firstCard = shuffledDeck[0];
-        cardStructure secondCard = shuffledDeck[1];
-        cardStructure thirdCard = shuffledDeck[2];
+            cardStructure firstCard = Draw();
+            cardStructure secondCard = Draw();
+            cardStructure thirdCard = Draw();
 
-        GameObject firstCardObject = Instantiate(shuffledDeck[0].card);
-        GameObject secondCardObject = Instantiate(shuffledDeck[1].card);
-        GameObject thirdCardObject = Instantiate(shuffledDeck[2].card);
+            GameObject firstCardObject = Instantiate(firstCard.card);
+            GameObject secondCardObject = Instantiate(secondCard.card);
+            GameObject thirdCardObject = Instantiate(thirdCard.card);
 
-        flopCards[0] = firstCard;
-        flopCards[1] = secondCard;
-        flopCards[2] = thirdCard;
-        
-        for (int i = 0; i < 3; i++)
-        {
-            deckList.RemoveAt(0);
-        }
+            flopCards[0] = firstCard;
+            flopCards[1] = secondCard;
+            flopCards[2] = thirdCard;
 
-        firstCardObject.transform.position = new Vector3(-0.1413f, 0.827545f, -9.0176f);
-        secondCardObject.transform.position = new Vector3(-0.07549999f, 0.827545f, -9.0176f);
-        thirdCardObject.transform.position = new Vector3(-0.009699985f, 0.827545f, -9.0176f);
+            firstCardObject.transform.position = new Vector3(-0.1413f, 0.827545f, -9.0176f);
+            secondCardObject.transform.position = new Vector3(-0.07549999f, 0.827545f, -9.0176f);
+            thirdCardObject.transform.position = new Vector3(-0.009699985f, 0.827545f, -9.0176f);
 
-        shuffledDeck = deckList.ToArray();
-        flopShown = true;
+            flopShown = true;
         }
         else
         {
@@ -123,33 +122,28 @@ public class Deck_Creation : MonoBehaviour
     {
         if (!turnShown)
         {
-        List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
-        turnCard = shuffledDeck[0];
-        GameObject turnCardObject = Instantiate(shuffledDeck[0].card);
-        deckList.RemoveAt(0);
-        shuffledDeck = deckList.ToArray();
+            turnCard = Draw();
+            GameObject turnCardObject = Instantiate(turnCard.card);
 
-        turnCardObject.transform.position = new Vector3(0.05610002f, 0.827545f, -9.0176f);
-        turnShown = true;
+
+            turnCardObject.transform.position = new Vector3(0.05610002f, 0.827545f, -9.0176f);
+            turnShown = true;
         }
         else
         {
             print("turn already shown");
         }
     }
+
     public void river()
     {
         if (!riverShown)
         {
-        List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
-        riverCard = shuffledDeck[0];
-        GameObject riverCardObject = Instantiate(shuffledDeck[0].card);
-        riverCardObject.transform.position = new Vector3(0.1219f, 0.827545f, -9.0176f);
-
-        deckList.RemoveAt(0);
-        shuffledDeck = deckList.ToArray();
+            riverCard = Draw();
+            GameObject riverCardObject = Instantiate(riverCard.card);
+            riverCardObject.transform.position = new Vector3(0.1219f, 0.827545f, -9.0176f);
         
-        riverShown = true;
+            riverShown = true;
         }
         else
         {
