@@ -11,10 +11,6 @@ public class deckActions : MonoBehaviour
 {
     public cardStructure[] Deck = new cardStructure[52];
     public cardStructure[] shuffledDeck;
-    Vector3 firstCardTransform;
-    Quaternion firstCardRotation;
-    Vector3 secondCardTransform;
-    Quaternion secondCardRotation;
     bool flopShown = false;
     bool turnShown = false;
     bool riverShown = false;
@@ -24,6 +20,10 @@ public class deckActions : MonoBehaviour
     public cardStructure[] flopCards = new cardStructure[3];
     public cardStructure turnCard;
     public cardStructure riverCard;
+    List<cardStructure> deckList;
+    private deckCardPlacement deckCardPlacement;
+    
+   
 
 
     public cardStructure[] shuffleDeck(cardStructure[] deck)
@@ -33,27 +33,18 @@ public class deckActions : MonoBehaviour
     }
     public void Awake()
     {
-        firstCardTransform = new Vector3(0.043f, 0.903f, -9.371f);
-        secondCardTransform = new Vector3(-0.0231f, 0.903f, -9.371f);
-        firstCardRotation = Quaternion.Euler(-39.985f, 0, 0);
-        secondCardRotation = Quaternion.Euler(-39.985f, 0, 0);
         shuffledDeck = shuffleDeck(Deck);
+        deckList = new List<cardStructure>(shuffledDeck);
+        deckCardPlacement = GetComponent<deckCardPlacement>();
     }
     public void Start()
     {
         
-
-    }
-
-    public cardStructure createCard(GameObject cardObject, String cardSuit, int cardRank)
-    {
-        return null;
     }
 
     public cardStructure Draw()
     {
-        List<cardStructure> deckList = new List<cardStructure>(shuffledDeck);
-        cardStructure drawnCard = shuffledDeck[0];
+        cardStructure drawnCard = deckList[0];
 
         
         deckList.RemoveAt(0);
@@ -76,21 +67,17 @@ public class deckActions : MonoBehaviour
 
             if (handSize == 0)
             {
-                sampleCardObject.transform.position = firstCardTransform;
-                sampleCardObject.transform.rotation = firstCardRotation;
                 playerHand[0] = sampleCard;
             }
             else if (handSize == 1)
             {
-                sampleCardObject.transform.position = secondCardTransform;
-                sampleCardObject.transform.rotation = secondCardRotation;
                 playerHand[1] = sampleCard;
             }
 
             handSize++;
         }
     }
-    public void flop()
+    public void Flop()
     {
         if (!flopShown)
         {
@@ -107,9 +94,10 @@ public class deckActions : MonoBehaviour
             flopCards[1] = secondCard;
             flopCards[2] = thirdCard;
 
-            firstCardObject.transform.position = new Vector3(-0.1413f, 0.827545f, -9.0176f);
-            secondCardObject.transform.position = new Vector3(-0.07549999f, 0.827545f, -9.0176f);
-            thirdCardObject.transform.position = new Vector3(-0.009699985f, 0.827545f, -9.0176f);
+
+            firstCardObject.transform.position = deckCardPlacement.firstFlopCardPlacement;
+            secondCardObject.transform.position = deckCardPlacement.secondFlopCardPlacement;
+            thirdCardObject.transform.position = deckCardPlacement.thirdFlopCardPlacement;
 
             flopShown = true;
         }
@@ -126,7 +114,7 @@ public class deckActions : MonoBehaviour
             GameObject turnCardObject = Instantiate(turnCard.card);
 
 
-            turnCardObject.transform.position = new Vector3(0.05610002f, 0.827545f, -9.0176f);
+            turnCardObject.transform.position = deckCardPlacement.turnCardPlacement;
             turnShown = true;
         }
         else
@@ -141,7 +129,7 @@ public class deckActions : MonoBehaviour
         {
             riverCard = Draw();
             GameObject riverCardObject = Instantiate(riverCard.card);
-            riverCardObject.transform.position = new Vector3(0.1219f, 0.827545f, -9.0176f);
+            riverCardObject.transform.position = deckCardPlacement.riverCardPlacement;
         
             riverShown = true;
         }
