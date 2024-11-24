@@ -19,6 +19,7 @@ public class HandChecker : MonoBehaviour
     int[] cardSuits;
     int[,] allCards;
     cardStructure[] fullCards;
+    int checkVariable;
     public void Awake()
     {
         deck = GameObject.Find("Red Deck Complete");
@@ -31,16 +32,16 @@ public class HandChecker : MonoBehaviour
         
     }
     public void testingMethod(){
-
+        checkVariable = 3;
         for (int i = 0; i < 3; i++){cardsOnTable[i] = deckActions.flopCards[i];}
-        cardsOnTable[3] = deckActions.turnCard;
-        cardsOnTable[4] = deckActions.riverCard;
+        if (deckActions.turnCard.card != null){cardsOnTable[3] = deckActions.turnCard; checkVariable++;}
+        if (deckActions.riverCard.card != null){cardsOnTable[4] = deckActions.riverCard; checkVariable++;}
 
         cardRanks = new int[13];
         cardSuits = new int[4];
         allCards = new int[13,4];
 
-        fullCards = new cardStructure[player_Hand.playerHand.Length + cardsOnTable.Length];
+        fullCards = new cardStructure[player_Hand.playerHand.Length + checkVariable];
         int[,] allCardsAsNum = CheckHand(player_Hand.playerHand, cardsOnTable);
 
         int cardScore = -1;
@@ -54,15 +55,15 @@ public class HandChecker : MonoBehaviour
         if (cardScore == -1){cardScore = CheckTwoPair(cardRanks);}
         if (cardScore == -1){cardScore = CheckHighCard(cardRanks);}
 
-        print(cardScore);
-
     }
     public int[,] CheckHand(cardStructure[] givenHand, cardStructure[] cardsOnTable){
         
         for (int i = 0; i < 2; i++){fullCards[i] = givenHand[i];}
-        for (int i = 2; i < fullCards.Length; i++){fullCards[i] = cardsOnTable[i - 2];}
+        for (int i = 2; i < fullCards.Length; i++){
+            fullCards[i] = cardsOnTable[i - 2];}
         //Fill rank array for hand grading purpouses 
-        for (int i = 0; i < fullCards.Length; i++){cardRanks[fullCards[i].rank - 1] += 1;}
+        for (int i = 0; i < fullCards.Length; i++){
+            cardRanks[fullCards[i].rank - 1] += 1;}
         //Give current card suit and have it be changed into a number and increment the
         //cardallCards array accordingly
         for (int i = 0; i < fullCards.Length; i++){cardSuits[SuitsToNumberConversion(fullCards[i].suit)] += 1;}
@@ -88,6 +89,7 @@ public class HandChecker : MonoBehaviour
         for (int i = 0; i < 4; i++)
 		{
             if (givenHand[0, i] + givenHand[9, i] + givenHand[10, i] + givenHand[11, i] + givenHand[12, i] == 5){
+                print("Royal Flush!");
                 return 20000;
             } 
         }
@@ -100,7 +102,10 @@ public class HandChecker : MonoBehaviour
             for (int j = 8; j >= 0; j--)
             {
 				if (givenHand[j, i] + givenHand[j + 1, i] + givenHand[j + 2, i] + givenHand[j + 3, i] + givenHand[j + 4, i] == 5)
-				{return 18000 + ((j + 4) * 100);} 
+				{
+                    print("Straight Flush!");
+                    return 18000 + ((j + 4) * 100);
+                } 
 			}
         }
         return -1;
@@ -113,8 +118,10 @@ public class HandChecker : MonoBehaviour
             {
                 if (i == 0)
                 {
+                    print("Four of a Kind!");
                     return 1600 + 1300;
                 }
+                print("Four of a Kind!");
                 return 16000 + (i * 100);
             }
         }
@@ -132,8 +139,10 @@ public class HandChecker : MonoBehaviour
                     {
                         if (i == 0)
                         {
+                            print("Full House!");
                             return 14000 + 1300;
                         }
+                        print("Full House!");
                         return 14000 + (i * 100);
                     }
                 }
@@ -150,12 +159,14 @@ public class HandChecker : MonoBehaviour
 			{
                 if (allCards[0, i] == 1)
                 {
+                    print("Flush!");
                     return 12000 + 1300;
                 }
 				for (int j = 12; j <= 0; j--)
 				{
 					if (allCards[j, i] == 1)
 					{
+                        print("Flush!");
 						return 12000 + (j * 100);
 					}
 				}
@@ -179,10 +190,12 @@ public class HandChecker : MonoBehaviour
                         {
                             if (givenHand[0] > 0 && i == 8)
                             {
+                                print("Straight!");
                                 return 1300 + 10000;
                             }
                             if (givenHand[i] > 0)
                             {
+                                print("Straight!");
                                 return ((i + 4) * 100) + 10000;
                             }
                         }
@@ -198,10 +211,12 @@ public class HandChecker : MonoBehaviour
         {
             if (i == 0 && givenHand[i] == 3)
             {
+                print("Three of a Kind!");
                 return 8000 + 1300;
             }
             if (givenHand[i] == 3)
             {
+                print("Three of a Kind!");
                 return 8000 + (i * 100);
             }
         }
@@ -219,13 +234,15 @@ public class HandChecker : MonoBehaviour
                     {
                         if (i == 0 && givenHand[i] == 2)
                         {
+                            print("Two Pair!");
                             return 6000 + 1300;
                         }
 
-                        if (i > j){return 6000 + (i * 100);}
-                        else if (i < j){return 6000 + (j * 100);}
+                        if (i > j){print("Two Pair!"); return 6000 + (i * 100);}
+                        else if (i < j){print("Two Pair!"); return 6000 + (j * 100);}
                     }
                 }
+                print("Pair!");
                 return 4000 + (i * 100);
             }
         }
@@ -237,10 +254,12 @@ public class HandChecker : MonoBehaviour
         {
             if (givenHand[0] == 1)
             {
+                print("High Card!");
                 return (13 * 100) + 2000;
             }
             if (givenHand[i] == 1 && i != 0)
             {
+                print("High Card!");
                 return (i * 100) + 2000;
             }
         }

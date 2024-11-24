@@ -319,6 +319,61 @@ PrefabInstance:
       insertIndex: -1
       addedObject: {fileID: 886973568}
   m_SourcePrefab: {fileID: 100100000, guid: 468dc33abc85ce34293836ff4f64d32a, type: 3}
+--- !u!1 &367087903
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 367087905}
+  - component: {fileID: 367087904}
+  m_Layer: 0
+  m_Name: Bot 4
+  m_TagString: Bot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &367087904
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367087903}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710c3c32ad31f4126ab45b17a90e292e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card1Position: {x: -0.4977, y: 0.8943, z: -9.077}
+  card1Rotation: {x: 55.619, y: 270, z: 0}
+  card2Position: {x: -0.4977, y: 0.8943, z: -9.14283}
+  card2Rotation: {x: 55.619, y: 270, z: 0}
+  botHand:
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+--- !u!4 &367087905
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 367087903}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.088211216, y: 0.8342553, z: -8.55357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &376825592
 GameObject:
   m_ObjectHideFlags: 0
@@ -491,8 +546,8 @@ MonoBehaviour:
   - card: {fileID: 0}
     suit: 
     rank: 0
-  firstCardInHandPosition: {x: 0.043, y: 0.903, z: -9.371}
-  secondCardInHandPosition: {x: -0.0231, y: 0.903, z: -9.371}
+  firstCardInHandPosition: {x: 0.043, y: 0.9314, z: -9.6319}
+  secondCardInHandPosition: {x: -0.0231, y: 0.9314, z: -9.6319}
 --- !u!4 &484636006
 Transform:
   m_ObjectHideFlags: 0
@@ -670,6 +725,61 @@ Transform:
   m_Children: []
   m_Father: {fileID: 0}
   m_LocalEulerAnglesHint: {x: 50, y: -30, z: 0}
+--- !u!1 &725436464
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 725436466}
+  - component: {fileID: 725436465}
+  m_Layer: 0
+  m_Name: Bot 2
+  m_TagString: Bot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &725436465
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725436464}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710c3c32ad31f4126ab45b17a90e292e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card1Position: {x: 0.4977, y: 0.8943, z: -9.077}
+  card1Rotation: {x: -55.619, y: 270, z: 0}
+  card2Position: {x: 0.4977, y: 0.8943, z: -9.14283}
+  card2Rotation: {x: -55.619, y: 270, z: 0}
+  botHand:
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+--- !u!4 &725436466
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 725436464}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.088211216, y: 0.8342553, z: -8.55357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &785335146
 GameObject:
   m_ObjectHideFlags: 0
@@ -980,13 +1090,13 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 963194225}
   serializedVersion: 2
-  m_LocalRotation: {x: 0.3418947, y: -0, z: -0, w: 0.9397383}
-  m_LocalPosition: {x: 0, y: 1.16, z: -9.57}
+  m_LocalRotation: {x: 0.2523609, y: -0, z: -0, w: 0.9676332}
+  m_LocalPosition: {x: 0, y: 1.112, z: -9.88}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 39.985, y: 0, z: 0}
+  m_LocalEulerAnglesHint: {x: 29.235, y: 0, z: 0}
 --- !u!1 &1009600963
 GameObject:
   m_ObjectHideFlags: 0
@@ -1387,6 +1497,50 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1077991076}
   m_CullTransparentMesh: 1
+--- !u!1 &1138376518
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1138376520}
+  - component: {fileID: 1138376519}
+  m_Layer: 0
+  m_Name: Dealer
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1138376519
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138376518}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a57cec1bb4ef85e44955a6433c4d85b0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+--- !u!4 &1138376520
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1138376518}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -5.2447553, y: 4.4755244, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1313396068
 GameObject:
   m_ObjectHideFlags: 0
@@ -1444,7 +1598,9 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Draw 1 Card
+  m_text: 'Deal Cards
+
+'
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
   m_sharedMaterial: {fileID: 2180264, guid: 8f586378b4e144a9851e7b34d9b748ee, type: 2}
@@ -1712,8 +1868,8 @@ GameObject:
   - component: {fileID: 1375996663}
   - component: {fileID: 1375996662}
   m_Layer: 0
-  m_Name: Bot
-  m_TagString: Untagged
+  m_Name: Bot 1
+  m_TagString: Bot
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1730,6 +1886,17 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710c3c32ad31f4126ab45b17a90e292e, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  card1Position: {x: 0.4977, y: 0.8943, z: -8.55357}
+  card1Rotation: {x: -55.619, y: 270, z: 0}
+  card2Position: {x: 0.4977, y: 0.8943, z: -8.6194}
+  card2Rotation: {x: -55.619, y: 270, z: 0}
+  botHand:
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
 --- !u!4 &1375996663
 Transform:
   m_ObjectHideFlags: 0
@@ -1791,7 +1958,7 @@ GameObject:
   - component: {fileID: 1599278037}
   - component: {fileID: 1599278036}
   m_Layer: 5
-  m_Name: Card Draw Button
+  m_Name: Card Deal Button
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -1861,9 +2028,9 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 484636005}
-        m_TargetAssemblyTypeName: Player_Hand, Assembly-CSharp
-        m_MethodName: AddCardsToHand
+      - m_Target: {fileID: 1138376519}
+        m_TargetAssemblyTypeName: Dealer, Assembly-CSharp
+        m_MethodName: DealCards
         m_Mode: 1
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
@@ -2180,6 +2347,61 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1813031325}
   m_CullTransparentMesh: 1
+--- !u!1 &1857362959
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1857362961}
+  - component: {fileID: 1857362960}
+  m_Layer: 0
+  m_Name: Bot 3
+  m_TagString: Bot
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1857362960
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857362959}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 710c3c32ad31f4126ab45b17a90e292e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  card1Position: {x: -0.4977, y: 0.8943, z: -8.55357}
+  card1Rotation: {x: 55.619, y: 270, z: 0}
+  card2Position: {x: -0.4977, y: 0.8943, z: -8.6194}
+  card2Rotation: {x: 55.619, y: 270, z: 0}
+  botHand:
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+--- !u!4 &1857362961
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1857362959}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -0.088211216, y: 0.8342553, z: -8.55357}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1888883183
 GameObject:
   m_ObjectHideFlags: 0
@@ -2363,4 +2585,8 @@ SceneRoots:
   - {fileID: 3695757630345004132}
   - {fileID: 484636006}
   - {fileID: 1375996663}
+  - {fileID: 725436466}
+  - {fileID: 1857362961}
+  - {fileID: 367087905}
   - {fileID: 1333823026}
+  - {fileID: 1138376520}
