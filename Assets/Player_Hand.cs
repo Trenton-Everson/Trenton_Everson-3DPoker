@@ -31,11 +31,11 @@ public class Player_Hand : MonoBehaviour
         playerHand[1] = deckActions.Draw();
         GameObject sampleCard = Instantiate(playerHand[0].card);
         sampleCard.transform.position = firstCardInHandPosition;
-        sampleCard.transform.rotation = Quaternion.Euler(-39.985f, 0, 0);
+        sampleCard.transform.rotation = Quaternion.Euler(-57.744f, 0, 0);
 
         sampleCard = Instantiate(playerHand[1].card);
         sampleCard.transform.position = secondCardInHandPosition;
-        sampleCard.transform.rotation = Quaternion.Euler(-39.985f, 0, 0);
+        sampleCard.transform.rotation = Quaternion.Euler(-57.744f, 0, 0);
         handFull = true;
         }
     }
