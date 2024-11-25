@@ -7120,50 +7120,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1109606011}
   m_CullTransparentMesh: 1
---- !u!1 &1138376518
-GameObject:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  serializedVersion: 6
-  m_Component:
-  - component: {fileID: 1138376520}
-  - component: {fileID: 1138376519}
-  m_Layer: 0
-  m_Name: Dealer
-  m_TagString: Untagged
-  m_Icon: {fileID: 0}
-  m_NavMeshLayer: 0
-  m_StaticEditorFlags: 0
-  m_IsActive: 1
---- !u!114 &1138376519
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138376518}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: a57cec1bb4ef85e44955a6433c4d85b0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
---- !u!4 &1138376520
-Transform:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1138376518}
-  serializedVersion: 2
-  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: -0.026194252, z: -8.9}
-  m_LocalScale: {x: 1, y: 1, z: 1}
-  m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 0}
-  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1157749085
 GameObject:
   m_ObjectHideFlags: 0
@@ -8963,7 +8919,7 @@ MonoBehaviour:
   m_CorrespondingSourceObject: {fileID: 5407962404395539399, guid: f5397212dc5f64b4faa75dd27416f94d, type: 3}
   m_PrefabInstance: {fileID: 3695757630345004132}
   m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559882401}
+  m_GameObject: {fileID: 0}
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 19ae83e236dc2bf488dae8e7c82033d3, type: 3}
@@ -9103,28 +9059,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1509298295}
   m_CullTransparentMesh: 1
---- !u!1 &1559882401 stripped
-GameObject:
-  m_CorrespondingSourceObject: {fileID: 686541342809032360, guid: f5397212dc5f64b4faa75dd27416f94d, type: 3}
-  m_PrefabInstance: {fileID: 3695757630345004132}
-  m_PrefabAsset: {fileID: 0}
---- !u!114 &1559882407
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1559882401}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 0458ddf646928034aa52feb6117f0274, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  firstFlopCardPlacement: {x: -0.1, y: 0.8275449, z: -9.0766}
-  secondFlopCardPlacement: {x: -0.03, y: 0.8275449, z: -9.0766}
-  thirdFlopCardPlacement: {x: 0.04, y: 0.8275449, z: -9.0766}
-  turnCardPlacement: {x: 0.11, y: 0.8275449, z: -9.0766}
-  riverCardPlacement: {x: 0.18, y: 0.8275449, z: -9.0766}
 --- !u!1 &1599278034
 GameObject:
   m_ObjectHideFlags: 0
@@ -9208,7 +9142,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1138376519}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: Dealer, Assembly-CSharp
         m_MethodName: DealCards
         m_Mode: 1
@@ -9747,7 +9681,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 1138376519}
+      - m_Target: {fileID: 570405539}
         m_TargetAssemblyTypeName: Dealer, Assembly-CSharp
         m_MethodName: CheckHands
         m_Mode: 1
@@ -11064,10 +10998,6 @@ PrefabInstance:
       propertyPath: m_Name
       value: Red Deck Complete
       objectReference: {fileID: 0}
-    - target: {fileID: 5407962404395539399, guid: f5397212dc5f64b4faa75dd27416f94d, type: 3}
-      propertyPath: Deck.Array.data[1].suit
-      value: Clubs
-      objectReference: {fileID: 0}
     - target: {fileID: 6213630050578891074, guid: f5397212dc5f64b4faa75dd27416f94d, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0.088211216
@@ -11111,10 +11041,7 @@ PrefabInstance:
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents:
-    - targetCorrespondingSourceObject: {fileID: 686541342809032360, guid: f5397212dc5f64b4faa75dd27416f94d, type: 3}
-      insertIndex: -1
-      addedObject: {fileID: 1559882407}
+    m_AddedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: f5397212dc5f64b4faa75dd27416f94d, type: 3}
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
@@ -11129,7 +11056,6 @@ SceneRoots:
   - {fileID: 3695757630345004132}
   - {fileID: 484636006}
   - {fileID: 1333823026}
-  - {fileID: 1138376520}
   - {fileID: 560238673}
   - {fileID: 2129084678}
   - {fileID: 570405543}

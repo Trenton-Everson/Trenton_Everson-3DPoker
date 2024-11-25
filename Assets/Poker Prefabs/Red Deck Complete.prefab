@@ -14,6 +14,7 @@ GameObject:
   - component: {fileID: 8104577160380880180}
   - component: {fileID: 4588746503377626178}
   - component: {fileID: 5407962404395539399}
+  - component: {fileID: 8172816327451811819}
   m_Layer: 0
   m_Name: Red Deck Complete
   m_TagString: Untagged
@@ -151,7 +152,7 @@ MonoBehaviour:
     suit: Clubs
     rank: 1
   - card: {fileID: 4728769083773931331, guid: aa3f536aaeb912142a229c72cbb7514f, type: 3}
-    suit: 
+    suit: Clubs
     rank: 2
   - card: {fileID: 2407788585431381547, guid: de7f4fb19a9baa94ebd8c6c2a283f3f6, type: 3}
     suit: Clubs
@@ -303,3 +304,46 @@ MonoBehaviour:
   - card: {fileID: 1969986926114890988, guid: 73f9fbaa0ed147a4598cfb2bbe05f2f2, type: 3}
     suit: Spades
     rank: 13
+  shuffledDeck: []
+  playerHand:
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  flopCards:
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  - card: {fileID: 0}
+    suit: 
+    rank: 0
+  turnCard:
+    card: {fileID: 0}
+    suit: 
+    rank: 0
+  riverCard:
+    card: {fileID: 0}
+    suit: 
+    rank: 0
+--- !u!114 &8172816327451811819
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 686541342809032360}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0458ddf646928034aa52feb6117f0274, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  firstFlopCardPlacement: {x: -0.1, y: 0.8275449, z: -9.0766}
+  secondFlopCardPlacement: {x: -0.03, y: 0.8275449, z: -9.0766}
+  thirdFlopCardPlacement: {x: 0.04, y: 0.8275449, z: -9.0766}
+  turnCardPlacement: {x: 0.11, y: 0.8275449, z: -9.0766}
+  riverCardPlacement: {x: 0.18, y: 0.8275449, z: -9.0766}

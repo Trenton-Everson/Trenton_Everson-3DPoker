@@ -72,7 +72,7 @@ public class PokerPreflopState : PokerBaseState
                     }
                     pokerRound.allPlayers = tList.ToArray();
 
-                    for (int j = 0; j < pokerRound.allPlayers.Length; j++)
+                    for (int j = 0; j < pokerRound.allPlayers.Length - 1; j++)
                     {
                         pokerRound.allPlayers[j].Reset();
                     }
