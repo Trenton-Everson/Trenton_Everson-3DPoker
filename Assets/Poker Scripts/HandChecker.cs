@@ -53,7 +53,8 @@ public class HandChecker : MonoBehaviour
         if (cardScore == -1){cardScore = CheckThreeOfAKind(cardRanks);}
         if (cardScore == -1){cardScore = CheckTwoPair(cardRanks);}
         if (cardScore == -1){cardScore = CheckHighCard(cardRanks);}
-        return "hand is a: " + whatIsHand + " and the score is: " + cardScore;
+        
+        return whatIsHand + "|||" + cardScore;
 
     }
     public int[,] CheckHand(cardStructure[] givenHand, cardStructure[] cardsOnTable){

@@ -72,8 +72,11 @@ public class deckActions : MonoBehaviour
 
 
             firstCardObject.transform.position = deckCardPlacement.firstFlopCardPlacement;
+            firstCardObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             secondCardObject.transform.position = deckCardPlacement.secondFlopCardPlacement;
+            secondCardObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             thirdCardObject.transform.position = deckCardPlacement.thirdFlopCardPlacement;
+            thirdCardObject.transform.rotation = Quaternion.Euler(0, 0, 0);
 
             flopShown = true;
         }
@@ -91,6 +94,7 @@ public class deckActions : MonoBehaviour
 
 
             turnCardObject.transform.position = deckCardPlacement.turnCardPlacement;
+            turnCardObject.transform.rotation = Quaternion.Euler(0, 0, 0);
             turnShown = true;
         }
         else
@@ -106,6 +110,7 @@ public class deckActions : MonoBehaviour
             riverCard = Draw();
             GameObject riverCardObject = Instantiate(riverCard.card);
             riverCardObject.transform.position = deckCardPlacement.riverCardPlacement;
+            riverCardObject.transform.rotation = Quaternion.Euler(0, 0, 0);
         
             riverShown = true;
         }

@@ -1,3 +1,4 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
@@ -19,7 +20,7 @@ public class Dealer : MonoBehaviour
     Player_Hand bot4Hand;
     private GameObject handChecker;
     HandChecker hand_Checker;
-    int currentRaise = 0;
+    [HideInInspector] public int currentCall = 0;
 
     void Awake()
     {
@@ -45,11 +46,15 @@ public class Dealer : MonoBehaviour
     }
     public void DealCards()
     {
+        
+
         playerHand.AddCardsToHand("Player");
         bot1Hand.AddCardsToHand("Bot 1");
         bot2Hand.AddCardsToHand("Bot 2");
         bot3Hand.AddCardsToHand("Bot 3");
         bot4Hand.AddCardsToHand("Bot 4");
+
+        
     }
 
     public void CheckHands()
@@ -59,6 +64,6 @@ public class Dealer : MonoBehaviour
         print("Bot 2's " + hand_Checker.testingMethod(bot2Hand.playerHand));
         print("Bot 3's " + hand_Checker.testingMethod(bot3Hand.playerHand));
         print("Bot 4's " + hand_Checker.testingMethod(bot4Hand.playerHand));
-        print("");
+        
     }
 }
