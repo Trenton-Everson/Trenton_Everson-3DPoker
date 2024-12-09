@@ -20,6 +20,8 @@ public class Dealer : MonoBehaviour
     Player_Hand bot4Hand;
     private GameObject handChecker;
     HandChecker hand_Checker;
+    private GameObject callAmountObj;
+    changeCurrentCall currentCallChange;
     [HideInInspector] public int currentCall = 0;
 
     void Awake()
@@ -31,6 +33,8 @@ public class Dealer : MonoBehaviour
         bot3 = GameObject.Find("Bot 3");
         bot4 = GameObject.Find("Bot 4");
         handChecker = GameObject.Find("Hand Checker");
+        callAmountObj = GameObject.Find("Current Call Amount");
+        currentCallChange = callAmountObj.GetComponent<changeCurrentCall>();
 
         deckActions = deck.GetComponent<deckActions>();
         playerHand = player.GetComponent<Player_Hand>();
@@ -39,10 +43,11 @@ public class Dealer : MonoBehaviour
         bot3Hand = bot3.GetComponent<Player_Hand>();
         bot4Hand = bot4.GetComponent<Player_Hand>();
         hand_Checker = handChecker.GetComponent<HandChecker>();
+        
     }
-    void Start()
+    void Update()
     {
-
+        currentCallChange.setCallAmount(currentCall);
     }
     public void DealCards()
     {

@@ -2,34 +2,24 @@ using System.Collections;
 using System.Collections.Generic;
 using System.Linq;
 using Unity.Collections;
+using Unity.VisualScripting;
 using UnityEngine;
 
 public class PokerPreflopState : PokerBaseState
 {
-    int currentPlayer = 0;
+    int currentPlayer;
     public override void EnterState(PokerStateManager pokerRound)
     {
+        pokerRound.roundNamer.setName("Preflop");
+        currentPlayer = 0;
         //Player,4,3,1,2
-        
-        pokerRound.allPlayers[0] = pokerRound.playerHand;
-        pokerRound.allPlayers[1] = pokerRound.bot4Hand;
-        pokerRound.allPlayers[2] = pokerRound.bot3Hand;
-        pokerRound.allPlayers[3] = pokerRound.bot1Hand;
-        pokerRound.allPlayers[4] = pokerRound.bot2Hand;
-
-        for (int i = 0; i < pokerRound.allPlayers.Length; i++)
-        {
-            pokerRound.allPlayers[i].turnPosition = i;
-        }
-        pokerRound.allPlayersCopy = pokerRound.allPlayers;
-        pokerRound.bot2Hand.hasResponded = true; //Bot2 pays big blind originally so we dont check for a raise
         pokerRound.dealer.DealCards();
         Debug.Log("Current call is now: " + pokerRound.dealer.currentCall);
     }
     public override void UpdateState(PokerStateManager pokerRound)
     {
             
-                if (pokerRound.allPlayers[currentPlayer].myTurn == false)
+                if (pokerRound.allPlayers[currentPlayer].myTurn == false && pokerRound.allPlayers[currentPlayer].allIn == false)
                 {
                 Debug.Log("It is now " + pokerRound.allPlayers[currentPlayer].objectName + "'s Turn To Play");
                 Debug.Log("They have " + pokerRound.allPlayers[currentPlayer].chips + " chips");
@@ -39,27 +29,37 @@ public class PokerPreflopState : PokerBaseState
                 
                 if (pokerRound.allPlayers[currentPlayer].fold == true 
                 && pokerRound.allPlayers[currentPlayer].inGame == true 
-                && pokerRound.allPlayers[currentPlayer].hasResponded == true)
+                && pokerRound.allPlayers[currentPlayer].hasResponded == true
+                && pokerRound.allPlayers[currentPlayer].allIn == false)
                 {
                     Debug.Log(pokerRound.allPlayers[currentPlayer].objectName + " has Folded");
                     pokerRound.allPlayers[currentPlayer].inGame = false;
                     pokerRound.allPlayers[currentPlayer].myTurn = false;
+                    if (currentPlayer != pokerRound.allPlayers.Length -1)
+                    {
                     currentPlayer++;
+                    }
                 }
                 else if (pokerRound.allPlayers[currentPlayer].inGame == true 
                 && pokerRound.allPlayers[currentPlayer].call == true 
-                && pokerRound.allPlayers[currentPlayer].hasResponded == true)
+                && pokerRound.allPlayers[currentPlayer].hasResponded == true
+                && pokerRound.allPlayers[currentPlayer].allIn == false)
                 {
                     Debug.Log(pokerRound.allPlayers[currentPlayer].objectName + " has Called");
                     pokerRound.allPlayers[currentPlayer].payCall(pokerRound.dealer.currentCall);
                     Debug.Log(pokerRound.allPlayers[currentPlayer].objectName + " now has " + pokerRound.allPlayers[currentPlayer].chips + " chips");
                     //pokerRound.allPlayers[currentPlayer].hasResponded = true;
                     pokerRound.allPlayers[currentPlayer].myTurn = false;
+
+                    if (currentPlayer != pokerRound.allPlayers.Length -1)
+                    {
                     currentPlayer++;
+                    }
                 }
                 else if (pokerRound.allPlayers[currentPlayer].inGame == true
                  && pokerRound.allPlayers[currentPlayer].raise == true 
-                 && pokerRound.allPlayers[currentPlayer].hasResponded == true)
+                 && pokerRound.allPlayers[currentPlayer].hasResponded == true
+                 && pokerRound.allPlayers[currentPlayer].allIn == false)
                 {
                     Debug.Log(pokerRound.allPlayers[currentPlayer].objectName + " has raised: " + pokerRound.allPlayers[currentPlayer].raiseAmount);
                     Debug.Log("Current call is now: " + pokerRound.dealer.currentCall);
@@ -67,6 +67,7 @@ public class PokerPreflopState : PokerBaseState
                     pokerRound.allPlayers[currentPlayer].raiseAmount = 0;
                     //pokerRound.allPlayers[currentPlayer].hasResponded = true;
                     pokerRound.allPlayers[currentPlayer].myTurn = false;
+                    pokerRound.allPlayers[currentPlayer].raise = false;
                     Player_Hand[] newAllPlayers;
                     Player_Hand arrayCheck = pokerRound.allPlayers[currentPlayer];
 
@@ -93,18 +94,18 @@ public class PokerPreflopState : PokerBaseState
                     }
                     currentPlayer = 0;
                 }
-                else if (pokerRound.allPlayers[currentPlayer].hasResponded == true && currentPlayer + 1 == pokerRound.allPlayers.Length)
+                if (pokerRound.allPlayers[currentPlayer].hasResponded == true && currentPlayer == pokerRound.allPlayers.Length - 1)
                 {
                     
                     Player_Hand[] newAllPlayers;
-                    Player_Hand arrayCheck = pokerRound.playerHand;
+                    Player_Hand arrayCheck = pokerRound.allPlayersCopyOne[0];
                     
-                    for (int i = 0; i < pokerRound.allPlayersCopy.Length; i++)
+                    for (int i = 0; i < pokerRound.allPlayers.Length; i++)
                     {
-                        if (pokerRound.allPlayersCopy[i].fold == false)
+                        if (pokerRound.allPlayers[i].fold == false)
                         {
-                            arrayCheck = pokerRound.allPlayersCopy[i];
-                            i = pokerRound.allPlayers.Length;
+                            arrayCheck = pokerRound.allPlayers[i];
+                            i = pokerRound.allPlayersCopyOne.Length;
                         }
                     }
                     
@@ -131,11 +132,22 @@ public class PokerPreflopState : PokerBaseState
                     {
                         pokerRound.allPlayers[i].Reset();
                     }
-                    pokerRound.bot2Hand.myTurn = false;
                     
 
                     Debug.Log("All players have responded moving to next round");
                     pokerRound.SwitchState(pokerRound.FlopState);
+                }
+                else if (pokerRound.allPlayers[currentPlayer].inGame == false)
+                {
+                    currentPlayer ++;
+                }
+                else if (pokerRound.allPlayers[currentPlayer].allIn == true)
+                {
+                    pokerRound.allPlayers[currentPlayer].hasResponded = true;
+                    if (currentPlayer != pokerRound.allPlayers.Length - 1)
+                    {
+                    currentPlayer++;
+                    }
                 }
             
         

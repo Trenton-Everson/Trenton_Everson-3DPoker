@@ -17,6 +17,7 @@ public class HandChecker : MonoBehaviour
     int[] cardSuits;
     int[,] allCards;
     cardStructure[] fullCards;
+    public GameObject blankCard;
     int checkVariable;
     string whatIsHand;
     public void Awake()
@@ -57,6 +58,79 @@ public class HandChecker : MonoBehaviour
         return whatIsHand + "|||" + cardScore;
 
     }
+
+    public int[,] handCheckForBot(cardStructure[] givenHand)
+    {
+        checkVariable = 0;
+        if (deckActions.flopCards[0].card != null){for (int i = 0; i < 3; i++){cardsOnTable[i] = deckActions.flopCards[i];} checkVariable = 3;}
+        if (deckActions.turnCard.card != null){cardsOnTable[3] = deckActions.turnCard; checkVariable++;}
+        if (deckActions.riverCard.card != null){cardsOnTable[4] = deckActions.riverCard; checkVariable++;}
+
+        cardRanks = new int[13];
+        cardSuits = new int[4];
+        allCards = new int[13,4];
+
+        fullCards = new cardStructure[givenHand.Length + checkVariable];
+        int[,] allCardsAsNum = CheckHand(givenHand, cardsOnTable);
+
+        return allCardsAsNum;
+    }
+    public int botHandScoreChecker(int[,] handArray, int potentialCardRank, int potentialCardSuit, cardStructure[] givenHand)
+    {
+        int checker = 0;
+        handArray[potentialCardRank - 1, potentialCardSuit] = 1;
+
+        cardRanks = new int[13];
+        cardSuits = new int[4];
+        allCards = new int[13,4];
+        
+        cardStructure potentialCard = new cardStructure();
+        potentialCard.rank = potentialCardRank;
+        if (potentialCardSuit == 0)         {potentialCard.suit = "Clubs";}
+        else if (potentialCardSuit == 1)    {potentialCard.suit = "Diamonds";}
+        else if (potentialCardSuit == 2)    {potentialCard.suit = "Hearts";}
+        else if (potentialCardSuit == 3)    {potentialCard.suit = "Spades";} 
+
+        potentialCard.card = blankCard;
+
+        if (cardsOnTable[3] == null){cardsOnTable[3] = potentialCard; checker = 1;}
+        else if (cardsOnTable[4]== null){cardsOnTable[4] = potentialCard; checker = 2;}
+
+        int test = 0;
+            for (int i = 0; i < 4; i++)
+            {
+                for (int j = 0; j < 13; j++)
+                {
+                    if (handArray[j, i] == 1)
+                    {
+                        test++;
+                    }
+                }
+            }
+
+        fullCards = new cardStructure[test];
+        int[,] allCardsAsNum = CheckHand(givenHand, cardsOnTable);
+
+        int cardScore = -1;
+        cardScore = CheckRoyalFlush(handArray);
+        if (cardScore == -1){cardScore = CheckStraightFlush(handArray);}
+        if (cardScore == -1){cardScore = CheckFourOfAKind(cardRanks);}
+        if (cardScore == -1){cardScore = CheckFullHouse(cardRanks);}
+        if (cardScore == -1){cardScore = CheckFlush(handArray);}
+        if (cardScore == -1){cardScore = CheckStraight(cardRanks);}
+        if (cardScore == -1){cardScore = CheckThreeOfAKind(cardRanks);}
+        if (cardScore == -1){cardScore = CheckTwoPair(cardRanks);}
+        if (cardScore == -1){cardScore = CheckHighCard(cardRanks);}
+
+
+        if (checker == 1){cardsOnTable[3] = null;}
+        else if (checker == 2){cardsOnTable[4] = null;}
+        handArray[potentialCardRank - 1, potentialCardSuit] = 0;
+        return cardScore;
+    }
+
+    
+
     public int[,] CheckHand(cardStructure[] givenHand, cardStructure[] cardsOnTable){
         
         for (int i = 0; i < 2; i++){fullCards[i] = givenHand[i];}
